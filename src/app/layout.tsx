@@ -7,7 +7,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html>
-      <body className="bg-slate-900 text-slate-50">
+      <body className="bg-slate-900 text-slate-50 font-montserrat">
         {children}
       </body>
     </html>
