@@ -1,7 +1,9 @@
+import Card from "@/components/Card";
+
 const Home = () => {
   return (
-    <main>
-      <h1>Hello world</h1>
+    <main className="pt-10 px-10 md:pt-20 w-screen flex justify-center">
+      <Card />
     </main>
   );
 };
