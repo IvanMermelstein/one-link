@@ -2,7 +2,8 @@ import Titles from './Titles';
 import Avatar from './Avatar';
 import Button from './Button';
 
-const Card = () => {
+const Card = (props: { user: User }) => {
+  console.log(props.user);
   return (
     <div
       className="bg-slate-700 rounded-lg w-full max-w-96 flex flex-col items-center text-center min-h-28
