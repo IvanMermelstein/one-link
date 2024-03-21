@@ -1,13 +1,9 @@
 import Card from "@/components/Card";
 
-async function getUser() {
-  const res = await fetch('http://localhost:3000/api/getLinkData', {
-    method: 'GET',
-    body: JSON.stringify({ id: '65f75c9f255dd7df1e99dd03' })
-  });
+async function getUser(id: string) {
+  const res = await fetch(`http://localhost:3000/api/link-data?id=${id}`);
 
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data');
   }
 
@@ -15,7 +11,9 @@ async function getUser() {
 }
 
 const Home = async () => {
-  const user: User = await getUser();
+  const id = '65f75c9f255dd7df1e99dd03';
+  const user: User = await getUser(id);
+  console.log(user);
 
   return (
     <main className="pt-10 px-10 md:pt-15 flex justify-center">

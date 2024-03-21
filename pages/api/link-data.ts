@@ -7,7 +7,10 @@ import {  MongoClient, ObjectId } from 'mongodb';
         try {
           await client.connect();
 
-          // const { id } = req.query;
+          const { id } = req.query;
+          if (!id || typeof id !== 'string') {
+            return res.status(400).json({ error: 'Id is required' });
+          }
 
           const db = client.db('one-link');
           const nid = new ObjectId(id);
